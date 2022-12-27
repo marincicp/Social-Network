@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/scss/profilePage.scss" />
+    <link rel="icon" href="./src/images/f-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Quicksand:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/phosphor-icons"></script>
+    <title>Facebook</title>
+  </head>
+  <body>
+    <div class="profile-container">
+      <div class="nav">
+        <div class="nav-left-side">
+          <img
+            src="./src/images/facebook-transparent.png"
+            class="nav-logo"
+            alt="logo"
+          />
+        </div>
+        <div class="nav-right-side">
+          <button class="inboxBtn">
+            <ion-icon class="inbox-icon" name="file-tray"></ion-icon>
+            <div class="numberOfMessage">2</div>
+          </button>
+
+          <button class="navBtn">
+            <ion-icon class="nav-icon" name="person"></ion-icon>
+          </button>
+        </div>
+      </div>
+      <div class="profile-container-left">
+        <div class="left-top">
+          <div class="left-top-image">
+            <img
+              class="transparent-logo"
+              src="./src/images/facebook-transparent.png"
+              alt=""
+            />
+          </div>
+          <div class="box-image">
+            <img src="./src/images/avatar.webp" alt="avatar" />
+          </div>
+          <button class="closeNav">
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+        </div>
+
+        <div class="box-user-info">
+          <div class="box-user-info-top">
+            <p class="about-me"># About me</p>
+            <button class="inboxBtn">
+              <ion-icon class="inbox-icon" name="file-tray"></ion-icon>
+              <div class="numberOfMessage">2</div>
+            </button>
+          </div>
+
+          <ul class="box-user-info-list">
+            <li>
+              <p>
+                <ion-icon class="info-icon" name="person"></ion-icon>
+                <span>Username: </span>
+              </p>
+              <span class="curentUser-username"> </span>
+            </li>
+            <li>
+              <p>
+                <ion-icon class="info-icon" name="at"></ion-icon>
+                <span>Email :</span>
+              </p>
+              <span class="curentUser-email"></span>
+            </li>
+            <!--
+            <li>
+              <p>
+                <i class="ph-cake-fill info-icon"></i>
+
+                <span>Birth date: </span>
+              </p>
+              <span class="curentUser-birthDate">23.5.2000.</span>
+            </li>
+
+            <li>
+              <p>
+                <ion-icon class="info-icon" name="home"></ion-icon>
+                <span>City :</span>
+              </p>
+              <span class="curentUser-city">Florida</span>
+            </li>
+            <li>
+              <p>
+                <ion-icon class="info-icon" name="call"></ion-icon>
+                <span>Phone :</span>
+              </p>
+              <span class="curentUser-phone">345345345</span>
+            </li>-->
+          </ul>
+
+          <!-- <div class="box-user-info-name">
+            <p>Username :</p>
+            <p>email :</p>
+          </div>
+          <div class="box-user-info-curent-user">
+            <p><span class="curent-username">Petar</span></p>
+            <p><span class="curent-email">asda@ads.com</span></p>
+            <p><span class="curent-email">asda@ads.com</span></p>
+            <p><span class="curent-email">asda@ads.com</span></p>
+          </div> -->
+        </div>
+
+        <div class="box-buttons">
+          <button class="profile-btn edit-btn">
+            <ion-icon
+              class="profile-btn-icona"
+              name="create-outline"
+            ></ion-icon>
+            Edit profile
+          </button>
+          <button class="profile-btn odjava-btn">
+            <ion-icon class="profile-btn-icona" name="exit-outline"></ion-icon>
+            Logout
+          </button>
+          <!-- <button class="profile-btn delete-btn">Delete profile</button> -->
+        </div>
+      </div>
+      <div class="profile-container-right">
+        <div class="right-top">
+          <form class="write-post" id="write-post">
+            <textarea
+              rows="1"
+              form="write-post"
+              autofocus
+              id="post-content"
+              placeholder="Write a post..."
+            ></textarea>
+            <button>Share</button>
+          </form>
+
+          <div class="sort-box">
+            <select class="sortPost">
+              <option value="myPosts">My posts</option>
+              <option class="selected" selected value="allPosts">
+                All posts
+              </option>
+            </select>
+            <button class="btn btn-myPosts" onclick="deleteMyPosts(event)">
+              <ion-icon class="icon" name="trash-outline"></ion-icon>
+            </button>
+            <button class="btn btn-allPosts" onclick="deleteAllPosts(event)">
+              <ion-icon class="icon" name="trash-outline"></ion-icon>
+            </button>
+          </div>
+
+          <!-- <button>My post</button
+            ><button>Delete my</button> -->
+        </div>
+        <div class="posts-parent">
+          <div class="single-post">
+            <!--           <div class="post-info-box">
+              <div class="post-info">
+              </div>
+            
+
+            <div class="comment-box">
+              
+            </div>-->
+            <div class="comment-parent"></div>
+          </div>
+        </div>
+        <div class="pagination">
+          <!-- <button class="prevBtn">prev</button>
+            <button class="nextBtn">next</button> -->
+        </div>
+      </div>
+
+      <!-- <div class="loader"></div>
+      </div> -->
+    </div>
+
+    <div class="modal-message">
+      <div class="message-container">
+        <div class="message-container-top">
+          <p class="message-container-sub"># Send a message</p>
+          <button class="closeModalMessage">X</button>
+        </div>
+        <div class="message-box">
+          <div class="poslati">
+            <select id="odabariPrimatelja">
+              <option value="" disabled selected>Send to...</option>
+            </select>
+            <input
+              type="text"
+              placeholder="Write a message..."
+              class="message-content"
+            />
+            <button class="sendMessageBtn">
+              <ion-icon name="send-outline"></ion-icon>
+            </button>
+          </div>
+        </div>
+
+        <div class="inbox-box">
+          <div class="inbox-box-heading"># Received messages</div>
+          <div class="inbox-box-all-message">
+            <ul class="message-list">
+              <!-- <li class="message">
+                <div class="message">
+                  <div>
+                    <ion-icon class="inbox-icon" name="mail-outline"></ion-icon>
+                  </div>
+
+                  <div>
+                    <p class="message-sender">PEtasr</p>
+                    <p class="message-content">asdasdadasdas</p>
+                  </div>
+                </div>
+                <div class="message-delete-box">
+                  <div class="message-date">1.1.20202.</div>
+                  <button class="btn-remove-message">
+                    <ion-icon class="icon" name="trash-outline"></ion-icon>
+                  </button>
+                </div>
+              </li> -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal edit-modal">
+      <div class="modal-top">
+        <h2>
+          <ion-icon class="modal-icona" name="create-outline"></ion-icon>
+          Edit profile
+        </h2>
+        <button class="closeModal">X</button>
+      </div>
+      <form id="editForm" class="modal-form">
+        <div class="modal-form-podaci">
+          <label for="edit_korisnicko_ime">Username:</label>
+          <input
+            class="modal-form-input"
+            type="text"
+            id="edit_korisnicko_ime"
+            name="korisnicko_ime"
+            placeholder="Username..."
+          />
+          <ul></ul>
+        </div>
+        <div class="modal-form-podaci">
+          <label for="edit_korisnicko_ime">Email:</label>
+          <input
+            class="modal-form-input"
+            type="email"
+            id="edit_email"
+            name="register_email"
+            placeholder="Email address..."
+          />
+        </div>
+
+        <div class="modal-form-podaci modal-form-podaci-birth">
+          <label for="edit_korisnicko_ime">Birth date:</label>
+          <div class="selected">
+            <select id="day" aria-placeholder="birth">
+              <option value="" selected hidden disabled>Day</option>
+            </select>
+            <select id="month">
+              <option value="" selected hidden disabled>Month</option>
+            </select>
+            <select id="year">
+              <option value="" hidden selected disabled>Year</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-form-podaci">
+          <label for="edit_korisnicko_ime">Phone number:</label>
+          <input
+            class="modal-form-input"
+            type="tel"
+            id="edit_phone"
+            name="edit_phone"
+            placeholder="Your phone number..."
+          />
+          <ul></ul>
+        </div>
+        <div class="modal-form-podaci">
+          <label for="edit_city">City:</label>
+          <input
+            class="modal-form-input"
+            type="text"
+            id="edit_city"
+            name="register_city"
+            placeholder="Where you live..."
+          />
+        </div>
+
+        <div class="createAcc-btn-div">
+          <button type="submit" class="edit-modal-btn createAcc-btn">
+            <ion-icon class="edit-icon" name="checkmark-outline"></ion-icon>
+            Confirm changes
+          </button>
+          <button class="edit-modal-btn deleteAcc-btn">
+            <ion-icon class="edit-icon" name="person-remove-outline"></ion-icon>
+            Delete profile
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="overlay"></div>
+    <script src="./src/js/Session.js"></script>
+    <script src="./src/js/User.js"></script>
+    <script src="./src/js/Post.js"></script>
+    <script src="./src/js/Comment.js"></script>
+    <script src="./src/js/Message.js"></script>
+    <script src="./src/js/profilePage.js"></script>
+    <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>

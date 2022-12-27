@@ -1,0 +1,519 @@
+.profile-container {
+  &-left {
+    background-color: #f4f6fb;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media only screen and (max-width: 46em) {
+      display: block;
+      height: 100%;
+      width: 50%;
+      transform: translateX(-105%);
+      position: absolute;
+      z-index: 3;
+      // box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.7);
+      transition: all 0.7s ease-in;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      width: 70%;
+    }
+
+    & .left-top {
+      height: 10rem;
+      background-color: $col-logo;
+      width: 100%;
+      position: relative;
+      display: flex;
+      padding: 1rem;
+      align-items: flex-start;
+      justify-content: center;
+      margin-bottom: 8rem;
+
+      & button {
+        margin-left: auto;
+        background-color: #fff;
+        rotate: (90deg);
+        font-size: 2.4rem;
+        border: none;
+        padding: 0.4rem;
+        border-radius: 1rem;
+        display: none;
+        //display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:active {
+          transform: scale(1.02);
+        }
+
+        @media only screen and (max-width: 46em) {
+          display: flex;
+        }
+      }
+
+      &-image {
+        display: flex;
+        width: 15rem;
+
+        & .transparent-logo {
+          width: 100%;
+          background-color: $col-logo;
+        }
+      }
+
+      & .box-image {
+        width: 8rem;
+        height: 8rem;
+
+        position: absolute;
+        right: 50%;
+        bottom: 0;
+        transform: translate(50%);
+        margin-bottom: -4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & img {
+          display: inline-block;
+          width: 100%;
+          border-radius: 50%;
+          display: inline-block;
+          border: 3px solid #fff;
+        }
+      }
+    }
+
+    & .box-user-info {
+      font-size: 1.6rem;
+      padding: 2rem;
+      display: flex;
+      gap: 2rem;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 3rem;
+      width: 100%;
+
+      &-top {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        & button {
+          background-color: #fff;
+          font-size: 1.4rem;
+          font-weight: 600;
+          padding: 1rem;
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          border: none;
+          border-radius: 1rem;
+          text-transform: uppercase;
+          //  background-color: #bbd0e6;
+          letter-spacing: 0.5px;
+          cursor: pointer;
+          position: relative;
+          transition: all 0.4s;
+
+          & .inbox-icon {
+            font-size: 2rem;
+          }
+
+          &:hover {
+            transform: scale(1.03);
+          }
+        }
+
+        & .numberOfMessage {
+          background-color: #fa5c5c;
+          position: absolute;
+          z-index: 2;
+          top: -1rem;
+          right: -1rem;
+          height: 2.2rem;
+          width: 2.2rem;
+          display: none;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          font-size: 1.4rem;
+        }
+      }
+
+      & .about-me {
+        font-size: 1.8rem;
+        font-weight: 600;
+      }
+
+      &-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        width: 100%;
+
+        & li {
+          display: flex;
+          background-color: #fff;
+          padding: 1rem;
+          width: 100%;
+          //  justify-content: space-between;
+          align-items: center;
+          gap: 2rem;
+          border-radius: 1rem;
+
+          & p {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.4rem;
+            font-weight: 600;
+
+            & .info-icon {
+              font-size: 2rem;
+            }
+          }
+        }
+      }
+
+      &-name {
+        width: 50%;
+        text-transform: uppercase;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        border-right: 1px solid #000;
+        padding: 0.5rem;
+      }
+
+      &-curent-user {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 0.5rem;
+        padding-left: 2rem;
+      }
+    }
+
+    & .box-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem;
+
+      width: 100%;
+      & .profile-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        transition: all 0.4s;
+        font-size: 1.4rem;
+        font-weight: 600;
+        border-radius: 1rem;
+        border: none;
+
+        &:active {
+          transform: scale(1.05);
+        }
+
+        &:hover {
+          transform: scale(1.05);
+        }
+
+        &:hover .profile-btn-icona {
+          transform: rotateZ(360deg);
+        }
+
+        &-icona {
+          transition: all 0.7s;
+          font-size: 1.8rem;
+          background-color: #bbb;
+
+          padding: 0.5rem;
+          font-weight: 600;
+          border-radius: 50%;
+        }
+      }
+      & .edit-btn {
+        background-color: #eee;
+      }
+      & .delete-btn {
+        background-color: red;
+      }
+    }
+  }
+}
+
+.createAcc-btn-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  width: 100%;
+  gap: 2rem;
+}
+
+.edit-modal-btn {
+  width: 50%;
+
+  cursor: pointer;
+  border: none;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  padding: 1rem 1rem;
+  color: #000;
+  font-weight: 600;
+
+  & .edit-icon {
+    font-size: 1.4rem;
+  }
+}
+
+.createAcc-btn {
+  background-color: #ddd;
+  color: #000;
+
+  background: linear-gradient(to right, #868e96 50%, #bbb 50%) right;
+  background-size: 200%;
+  transition: 0.5s ease-out;
+
+  &:hover {
+    background-position: left;
+  }
+}
+
+.modal-form .modal-form-podaci-birth {
+  display: block;
+}
+
+.selected {
+  display: flex;
+  justify-content: space-between;
+}
+
+.deleteAcc-btn {
+  color: #000;
+
+  background: linear-gradient(to right, #c92a2a 50%, #ff8787 50%) right;
+  background-size: 200%;
+  transition: 0.5s ease-out;
+
+  &:hover {
+    background-position: left;
+  }
+}
+
+.modal-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.4);
+  padding: 1rem;
+  z-index: 10;
+  background-color: #ffff;
+  border-radius: 1rem;
+  width: 50rem;
+  min-height: 30rem;
+  display: none;
+}
+
+.message-container {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  &-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+
+    & button {
+      font-size: 2rem;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      transition: all 0.4s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &-sub {
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+
+  & .message-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    & .poslati {
+      display: flex;
+      width: 100%;
+
+      & select {
+        padding: 0.3rem;
+        border-top-left-radius: 0.4rem;
+        border-bottom-left-radius: 0.4rem;
+        width: 30%;
+        //border: 1px solid #bbb;
+        box-shadow: inset 0 0 0 1px #bbb;
+        border: none;
+
+        &:focus {
+          outline: none;
+        }
+      }
+      & input {
+        padding: 1rem;
+        width: 50%;
+        // border: 1px solid #bbb;
+        border: none;
+        box-shadow: inset 0 0 0 1px #bbb;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      & button {
+        border: none;
+        padding: 0.5rem 1rem;
+        border-top-right-radius: 0.4rem;
+        border-bottom-right-radius: 0.4rem;
+        cursor: pointer;
+        width: 20%;
+        font-size: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $col-logo;
+        color: #fff;
+        transition: all 0.4s ease-out;
+
+        &:hover {
+          background-color: $col-blue-medium;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+
+  & .inbox-box {
+    margin-top: 2rem;
+
+    &-heading {
+      display: flex;
+      align-items: center;
+
+      gap: 1rem;
+      font-size: 1.8rem;
+      font-weight: 600;
+
+      & .inbox-icon {
+        font-size: 2rem;
+      }
+    }
+
+    &-all-message {
+      width: 100%;
+      margin-top: 1rem;
+
+      & .message-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        & .message {
+          display: flex;
+          background-color: #eee;
+          border-radius: 1rem;
+          align-items: center;
+          justify-content: space-between;
+          gap: 2rem;
+          padding: 0.5rem 1rem;
+
+          &-item {
+            background-color: #eee;
+            border-radius: 1rem;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            padding: 0.5rem 1rem;
+            display: flex;
+          }
+
+          & .inbox-icon {
+            font-size: 2.6rem;
+          }
+
+          &-sender {
+            font-size: 1.6rem;
+            font-weight: 600;
+          }
+
+          &-content {
+            font-size: 1.4rem;
+          }
+
+          &-delete-box {
+            display: flex;
+            gap: 2rem;
+
+            & .message-date {
+              font-size: 1.4rem;
+            }
+            & .btn-remove-message {
+              color: #fff;
+              background-color: transparent;
+              border: none;
+              cursor: pointer;
+              transition: all 0.2s;
+
+              &:hover {
+                transform: scale(1.1);
+              }
+
+              &:active {
+                transform: scale(1);
+              }
+
+              & .icon {
+                font-size: 2rem;
+                color: red;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

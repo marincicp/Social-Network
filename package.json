@@ -1,0 +1,17 @@
+{
+  "name": "social-network-2022",
+  "version": "1.0.0",
+  "description": "soical newtwork",
+  "default": "index.html",
+  "scripts": {
+    "start": "parcel index.html profile.html",
+    "build": "parcel build index.html profile.html --dist-dir ./dist"
+  },
+  "author": "Petar",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.0",
+    "parcel": "^2.8.0",
+    "sass": "^1.56.1"
+  }
+}

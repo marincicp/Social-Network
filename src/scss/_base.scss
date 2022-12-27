@@ -1,0 +1,30 @@
+/* 
+h2 - 5.2rem
+
+*/
+
+$col-blue-dark: #244d61;
+$col-blue-medium: #5689c0;
+$col-blue-light: #75e2ff;
+$col-gray: #eaebed;
+$col-logo: #4267b2;
+$col-green-light: #51cf66;
+$col-green-dark: #37b24d;
+
+$bp-large: 60em; // 950px
+$bp-medium: 54em; // 870px
+$bp-small: 46em; // 733pxpx
+$bp-smallest: 31.25em; // 500px
+
+.overlay {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+
+  position: absolute;
+  z-index: 2;
+  display: none;
+  transition: all 0.4s;
+}

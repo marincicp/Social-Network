@@ -1,0 +1,460 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+
+  @media only screen and (max-width: ($bp-medium)) {
+    font-size: 50%;
+  }
+  @media only screen and (max-width: $bp-small) {
+    font-size: 44%;
+  }
+}
+
+body {
+  background-color: $col-gray;
+  font-size: 1.6rem;
+  font-family: sans-serif;
+  background-color: $col-gray;
+  background-color: #edf2ff;
+}
+
+.container {
+  width: 70rem;
+  height: fit-content;
+  background-color: #fff;
+  margin: 0 auto;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.8s;
+
+  &:hover {
+    transform: translate(-50%, -50%), scale(1.005);
+  }
+
+  @media only screen and (max-width: ($bp-small)) {
+    width: 90%;
+    height: 90%;
+  }
+}
+
+.blur {
+  filter: blur(4px);
+}
+
+.box {
+  &-logo {
+    height: 35%;
+    max-width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    padding: 2rem 4rem;
+
+    & img {
+      display: block;
+      width: 20rem;
+      height: 10rem;
+    }
+
+    & h2 {
+      font-size: 2.8rem;
+      text-align: center;
+      color: $col-logo;
+    }
+  }
+
+  &-form {
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
+    width: 100%;
+
+    padding: 2rem 0;
+  }
+
+  &-createAcc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+    border-top: 1px solid #ddd;
+    width: 100%;
+
+    & button {
+      background-color: $col-green-light;
+      border: none;
+      color: #fff;
+      padding: 1.5rem 2rem;
+      text-transform: uppercase;
+      border-radius: 1rem;
+      cursor: pointer;
+      letter-spacing: 0.5px;
+      transition: all 0.4s;
+
+      // @media only screen and (max-width: ($bp-small)) {
+      //   width: 70%;
+      //   padding: 2rem 1rem;
+      // }
+      @media only screen and (max-width: ($bp-medium)) {
+        width: 50%;
+        padding: 2rem 1rem;
+      }
+
+      @media only screen and (max-width: ($bp-small)) {
+        width: 50%;
+        padding: 2rem 1rem;
+      }
+
+      @media only screen and (max-width: (39.3em)) {
+        width: 70%;
+        padding: 2rem 1rem;
+      }
+
+      &:hover {
+        background-color: $col-green-dark;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+
+  &-input {
+    // width: 40%;
+    // padding: 1rem 2rem;
+    // border-radius: 1rem;
+    // border: 1px solid $col-gray;
+    // box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+
+    width: 40%;
+    height: 3rem;
+    padding: 2rem 1rem;
+    border-radius: 1rem;
+    border: 1px solid #bbb;
+
+    @media only screen and (max-width: ($bp-medium)) {
+      width: 50%;
+      padding: 3rem 1rem;
+    }
+
+    @media only screen and (max-width: ($bp-small)) {
+      width: 50%;
+      padding: 3rem 1rem;
+    }
+
+    @media only screen and (max-width: (39.3em)) {
+      width: 70%;
+      padding: 3rem 1rem;
+    }
+
+    &::placeholder {
+      font-family: inherit;
+      color: #bbb;
+      font-size: 1.4rem;
+      letter-spacing: 0.5px;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &-btn {
+    width: 40%;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    border: none;
+    color: #fff;
+    background-color: $col-logo;
+    cursor: pointer;
+    transition: all 0.4s;
+    text-transform: uppercase;
+
+    @media only screen and (max-width: ($bp-medium)) {
+      width: 50%;
+      padding: 2rem 1rem;
+    }
+
+    @media only screen and (max-width: ($bp-small)) {
+      width: 50%;
+      padding: 2rem 1rem;
+    }
+
+    @media only screen and (max-width: (39.3em)) {
+      width: 70%;
+      padding: 2rem 1rem;
+    }
+
+    &:hover {
+      background-color: $col-blue-medium;
+    }
+  }
+}
+
+/* REGISTRATION MODAL */
+
+.modal {
+  height: auto;
+  width: 40rem;
+  overflow: hidden;
+  background-color: $col-gray;
+  background-color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem;
+  z-index: 2;
+  box-shadow: 0 0 0 1000rem rgba(0, 0, 0, 0.7);
+  border-radius: 2rem;
+  display: none;
+
+  @media only screen and (max-width: ($bp-medium)) {
+    width: 50%;
+  }
+
+  @media only screen and (max-width: ($bp-small)) {
+    width: 70%;
+  }
+
+  @media only screen and (max-width: ($bp-smallest)) {
+    width: 85%;
+  }
+
+  &-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #ddd;
+    padding: 1rem 0;
+
+    & h2 {
+      color: $col-logo;
+
+      @media only screen and (max-width: ($bp-small)) {
+        font-size: 3.2rem;
+      }
+    }
+    & button {
+      background-color: transparent;
+
+      border: none;
+      border-radius: 50%;
+      font-size: 1.8rem;
+      color: #495057;
+      font-weight: 600;
+      cursor: pointer;
+      @media only screen and (max-width: ($bp-small)) {
+        font-size: 3.2rem;
+      }
+    }
+  }
+
+  &-form {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+
+    & div {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+      align-items: center;
+
+      & label {
+        align-self: flex-start;
+        // padding: 0 2rem;
+
+        font-size: 1.2rem;
+        color: #bbb;
+      }
+
+      & .erorr-lista {
+        width: 80%;
+        padding: 0 2rem;
+        color: red;
+        font-size: 1.2rem;
+      }
+    }
+
+    &-input {
+      // width: 80%;
+      // padding: 1rem 2rem;
+      // border-radius: 1rem;
+      // border: 1px solid $col-gray;
+      // box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+
+      width: 80%;
+      height: 3rem;
+      padding: 2rem 1rem;
+      border-radius: 1rem;
+      border: 1px solid #bbb;
+
+      @media only screen and (max-width: ($bp-medium)) {
+        height: 5rem;
+      }
+
+      @media only screen and (max-width: ($bp-small)) {
+        width: 80%;
+        padding: 2.5rem 1.5rem;
+      }
+
+      @media only screen and (max-width: ($bp-smallest)) {
+        width: 90%;
+        padding: 2.5rem 1.5rem;
+      }
+
+      // @media only screen and (max-width: (39.3em)) {
+      //   width: 70%;
+      //   padding: 2rem 1rem;
+      // }
+
+      &::placeholder {
+        font-family: inherit;
+        color: #bbb;
+        font-size: 1.4rem;
+        letter-spacing: 0.5px;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+.createAcc-btn-div {
+  margin-top: 2rem;
+  border-top: 1px solid #ddd;
+  display: flex;
+
+  padding-top: 2rem;
+}
+
+.createAcc-btn {
+  background-color: $col-green-light;
+  border: none;
+  color: #fff;
+  padding: 1.5rem 2rem;
+  text-transform: uppercase;
+  border-radius: 1rem;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: all 0.4s;
+
+  @media only screen and (max-width: ($bp-small)) {
+    width: 60%;
+    padding: 2rem 1rem;
+  }
+  @media only screen and (max-width: ($bp-small)) {
+    width: 70%;
+    padding: 2rem 1rem;
+  }
+
+  &:hover {
+    background-color: $col-green-dark;
+  }
+}
+
+.error-ul {
+  list-style: none;
+
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+ul li {
+  animation: errorss 1s;
+}
+
+@keyframes errorss {
+  0% {
+    transform: translateY(-1rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+// notification
+.notification {
+  width: 20rem;
+  height: 8rem;
+  background: #fa4e4e;
+  border-radius: 2rem;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  //transform: translate(-50%);
+  //box-shadow: 0 0 0 1000rem rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1rem;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  z-index: 3;
+  display: none;
+  transition: all 0.4s;
+  transform: translate(-50%, 0);
+
+  & p {
+    font-size: 1.4rem;
+    text-align: center;
+    color: #fff;
+  }
+
+  & button {
+    display: inline-block;
+    width: 10rem;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: $col-gray;
+    color: #000;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background-color: #fff;
+  }
+}

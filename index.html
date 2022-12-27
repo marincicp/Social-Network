@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="./src/images/f-logo.png"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/scss/_main.scss" />
+
+    <title>Facebook</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box-logo">
+        <img src="./src/images/logo.svg" alt="logo" />
+        <h2>Connect with friends and the world around you on Facebook.</h2>
+      </div>
+
+      <div class="box-form">
+        <form class="form" id="loginForm">
+          <input
+            class="form-input"
+            id="login_email"
+            name="email"
+            type="email"
+            placeholder="Email address.."
+          />
+
+          <input
+            class="form-input"
+            type="password"
+            name="lozinka"
+            id="login_lozinka"
+            placeholder="Password"
+          />
+          <button id="login-btn" class="form-btn login-btn">Log In</button>
+        </form>
+      </div>
+
+      <div class="box-createAcc">
+        <button id="registracija" class="create-acc-btn">
+          Create new account
+        </button>
+      </div>
+    </div>
+
+    <div class="modal">
+      <div class="modal-top">
+        <h2>Create a new account</h2>
+        <button class="closeModal">X</button>
+      </div>
+      <form id="registrationForm" class="modal-form">
+        <div>
+          <!-- <label for="korisnicko_ime">Username: *</label> -->
+          <input
+            class="modal-form-input"
+            type="text"
+            id="korisnicko_ime"
+            name="korisnicko_ime"
+            placeholder="Username..."
+          />
+          <ul class="erorr-lista"></ul>
+        </div>
+
+        <div>
+          <!-- <label for="email">Email: *</label> -->
+          <input
+            class="modal-form-input"
+            type="email"
+            id="email"
+            name="register_email"
+            placeholder="Email address..."
+          />
+          <ul class="erorr-lista"></ul>
+        </div>
+
+        <div>
+          <!-- <label for="lozink">Password: *</label> -->
+          <input
+            class="modal-form-input"
+            type="password"
+            id="lozinka"
+            name="register_lozinka"
+            placeholder="Password"
+          />
+          <ul class="erorr-lista"></ul>
+        </div>
+
+        <div>
+          <!-- <label for="lozinka">Confrim Password: *</label> -->
+          <input
+            class="modal-form-input"
+            type="password"
+            id="ponovi_lozinku"
+            name="ponovi_lozinku"
+            placeholder="Confrim password"
+          />
+          <ul class="erorr-lista"></ul>
+        </div>
+        <div class="createAcc-btn-div">
+          <button type="submit" class="createAcc-btn">Create now</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="notification">
+      <p>Invalid email or password !</p>
+
+      <button class="notiBtn">Try again</button>
+    </div>
+
+    <div class="overlay"></div>
+
+    <script src="./src/js/validator.js"></script>
+    <script src="./src/js/Session.js"></script>
+
+    <script src="./src/js/User.js"></script>
+    <script src="./src/js/app.js"></script>
+  </body>
+</html>
